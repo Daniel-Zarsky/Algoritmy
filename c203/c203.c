@@ -94,7 +94,7 @@ void Queue_Error( int error_code ) {
  * @param stack Ukazatel na strukturu fronty
  */
 void Queue_Init( Queue *queue ) {
-    //solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
     if (queue == NULL) {
         Queue_Error(QERR_INIT);
         return;
@@ -117,7 +117,7 @@ void Queue_Init( Queue *queue ) {
  * @param index Aktuální index
  */
 int nextIndex( int index ) {
-	//solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
 	return (index+1)% QUEUE_SIZE;
 }
 
@@ -128,7 +128,7 @@ int nextIndex( int index ) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 int Queue_IsEmpty( const Queue *queue ) {
-	//solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
 	 if(queue->firstIndex == queue->freeIndex){return 1;}else{return 0;}
 }
 
@@ -140,7 +140,7 @@ int Queue_IsEmpty( const Queue *queue ) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 int Queue_IsFull( const Queue *queue ) {
-	//solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
     if(nextIndex(queue->freeIndex)== queue->firstIndex){return 1;}else{return 0;}
 
 }
@@ -159,7 +159,7 @@ int Queue_IsFull( const Queue *queue ) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void Queue_Front( const Queue *queue, char *dataPtr ) {
-	//solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
     if(Queue_IsEmpty(queue)){
         Queue_Error(QERR_FRONT); return;
     }
@@ -175,7 +175,7 @@ void Queue_Front( const Queue *queue, char *dataPtr ) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 void Queue_Remove( Queue *queue ) {
-	//solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
     if(Queue_IsEmpty(queue)){
         Queue_Error(QERR_REMOVE);
         return;
@@ -195,7 +195,7 @@ void Queue_Remove( Queue *queue ) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void Queue_Dequeue( Queue *queue, char *dataPtr ) {
-	//solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
     if(Queue_IsEmpty(queue)){
         Queue_Error(QERR_DEQUEUE);return;
     }
@@ -216,7 +216,7 @@ void Queue_Dequeue( Queue *queue, char *dataPtr ) {
  * @param data Znak k vložení
  */
 void Queue_Enqueue( Queue *queue, char data ) {
-	//solved = FALSE; /* V případě řešení, smažte tento řádek! */
+
     if(Queue_IsFull(queue)){
         Queue_Error(QERR_ENQUEUE);
         return;
